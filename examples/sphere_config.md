@@ -6,7 +6,7 @@ practical guidance (bounds and parameters), plus visuals.
 ## What is the Sphere function?
 The Sphere function in $\mathbb{R}^d$ is defined as:
 $$
-\operatorname{Sphere}(\mathbf{x}) = \sum_{i=1}^{d} x_i^2
+\mathbf{x} = \sum_{i=1}^{d} x_i^2
 $$
 It is **convex**, **separable**, and **strictly unimodal** with a unique global minimum at
 $\mathbf{x}^* = \mathbf{0}$ where $f(\mathbf{x}^*) = 0$. Because of its smooth, bowl-shaped
