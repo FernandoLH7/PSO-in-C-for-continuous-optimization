@@ -3,50 +3,45 @@
 ## Visual intuition
 
 <p align="center">
-  <img src="docs/pso_periodic_contours.png" alt="PSO on a periodic, multimodal landscape (contour plot with swarm path)" width="640">
+  <img src="docs/Captura%20de%20pantalla%202025-11-07%20131650.png" alt="PSO on a rippled, periodic landscape: particles exploring and drifting toward a deeper basin" width="640">
 </p>
 
 **Figure 1 — PSO on a periodic, multimodal surface.**  
-The rippled contours represent a landscape with many local minima (periodic “basins”).  
-Orange markers trace successive particle positions: the swarm samples multiple basins, then drifts toward a deeper valley as information diffuses via the global best. This is the classic PSO behavior on hard, bumpy terrains.
+The wavy contour lines indicate many local minima. The orange “x” markers show successive particle locations. The swarm samples multiple basins early, then information sharing (global best) pulls it toward a deeper valley.
 
 ---
 
 <p align="center">
-  <img src="docs/sphere_bowl_and_contours.png" alt="Sphere function: 3D bowl and 2D contour with global minimum at the origin" width="960">
+  <img src="docs/Captura%20de%20pantalla%202025-11-07%20131704.png" alt="Sphere function: 3D quadratic bowl and 2D contour map with the global minimum at the origin" width="960">
 </p>
 
-**Figure 2 — Sphere benchmark (what this repo runs by default).**  
-Left: the smooth quadratic “bowl” with global minimum at **x = 0**.  
-Right: 2D contours centered at the origin. On this convex objective PSO contracts cleanly toward the center; it’s a good sanity check for settings like inertia `w`, cognitive/social gains `c1`, `c2`, and velocity/position clamps.
+**Figure 2 — Sphere benchmark (this repo’s default).**  
+Left: the quadratic bowl; right: concentric contours centered at the origin. On this convex objective, PSO contracts cleanly to **x = 0**. It’s a sanity check for `w`, `c1`, `c2`, and clamping settings.
 
 ---
 
 <p align="center">
-  <img src="docs/pso_multimodal_path.png" alt="PSO trajectory across a multimodal surface with several peaks/valleys" width="960">
+  <img src="docs/Captura%20de%20pantalla%202025-11-07%20131716.png" alt="PSO traversing a multimodal surface with several peaks/valleys; red points track the current best-so-far" width="960">
 </p>
 
 **Figure 3 — Crossing basins on a multimodal surface.**  
-Red points show the best-so-far positions over time. You can see PSO “jumping” across ridges and settling into a deeper basin as particles share information. This is why PSO is often preferred when gradients are unavailable, noisy, or misleading.
+Red points track the best-so-far solution over time. You can see “hops” across ridges as particles share information, eventually settling in a deeper basin. This illustrates why PSO is useful when gradients are unavailable, noisy, or misleading.
 
-> ℹ️ If your file names differ, replace the three `docs/*.png` paths above with your own:
-> - `docs/pso_periodic_contours.png` → your periodic/rippled contour image  
-> - `docs/sphere_bowl_and_contours.png` → your sphere bowl + contour image  
-> - `docs/pso_multimodal_path.png` → your multimodal surface path image
+> Tip: Filenames with spaces are URL-encoded above. If you prefer cleaner paths, rename them (e.g., `pso_periodic_contours.png`, `sphere_bowl_contours.png`, `pso_multimodal_path.png`) and update the `src`.
 
 ---
 
-## Real-world applications of PSO in intelligent systems & robotics
+## Real-world applications in intelligent systems & robotics
 
-PSO is handy whenever you can **score** a candidate solution but don’t have (or don’t trust) gradients.
+PSO shines whenever you can **score** a candidate but don’t have (or don’t trust) gradients.
 
-- **Controller tuning (PID / MPC gains):** minimize tracking error + control effort; works directly on hardware-in-the-loop or Gazebo/ROS sim.
-- **Trajectory & path optimization:** fit splines/corridors to reduce length, jerk, and collision penalties; useful for mobile robots and manipulators.
-- **Sensor & camera calibration:** optimize intrinsics/extrinsics by minimizing reprojection or map-consistency error.
-- **Multi-robot task allocation & formation control:** assign tasks/waypoints or formation parameters to minimize mission time and energy.
-- **Localization/SLAM parameter search:** tune filter/process-noise and loop-closure thresholds to improve robustness on real datasets.
-- **Coverage & exploration planning (UAV/UGV):** pick viewpoints/paths that maximize mapped area or information gain under budget constraints.
-- **Scheduling & resource optimization:** balance battery, charging, and mission windows in fleets.
-- **ML for robotics:** quick hyperparameter searches for perception models (e.g., thresholds, augment mixes, lightweight nets) when full HPO is overkill.
+- **Controller tuning (PID/MPC):** minimize tracking error + control effort (HIL or Gazebo/ROS).
+- **Trajectory & path optimization:** fit splines/corridors to reduce length, jerk, and collision penalties (UGV/UAV/manipulators).
+- **Sensor/camera calibration:** optimize intrinsics/extrinsics via reprojection or map-consistency error.
+- **Multi-robot task allocation & formation:** assign tasks/waypoints or formation parameters to minimize time and energy.
+- **SLAM/Localization parameter search:** tune noise models and loop-closure thresholds for robustness.
+- **Coverage & exploration planning:** choose viewpoints/paths maximizing mapped area or information gain under budget constraints.
+- **Scheduling & fleet ops:** balance battery, charging, and mission windows.
+- **ML in robotics:** quick hyperparameter sweeps for perception modules when full HPO is overkill.
 
-> TL;DR: If you can write a **fitness function**, PSO will search that space—no gradients required, tolerant to noise, and simple to implement/parallelize.
+> TL;DR: If you can write a **fitness function**, PSO will search that space—gradient-free, noise-tolerant, and simple to parallelize.
