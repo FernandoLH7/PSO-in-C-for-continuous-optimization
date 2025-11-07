@@ -1,7 +1,7 @@
 # Sphere benchmark: background, settings, and visuals
 
 This note explains the **Sphere** objective used in the repository example and provides quick,
-practical guidance (bounds and parameters), plus visuals you can include in the README or docs.
+practical guidance (bounds and parameters), plus visuals.
 
 > **GitHub math tip:** use `$...$` for inline math and `$$...$$` for display equations.
 > Make sure this file is **not** inside a code block (no triple backticks around the whole text).
