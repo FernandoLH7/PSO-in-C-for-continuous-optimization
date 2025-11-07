@@ -8,7 +8,7 @@
 The wavy contour lines indicate many local minima. The orange “x” markers show successive particle locations. The swarm samples multiple basins early, then information sharing (global best) pulls it toward a deeper valley.
 
 <p align="center">
-  <img src="docs/Captura%20de%20pantalla%202025-11-07%20131704.png" alt="Sphere function: 3D quadratic bowl and 2D contour map with the global minimum at the origin" width="960">
+  <img src="docs/pso_convex.gif" alt="Sphere function: 3D quadratic bowl and 2D contour map with the global minimum at the origin" width="960">
 </p>
 
 **Figure 2 — Sphere benchmark (this repo’s default).**  
@@ -17,7 +17,7 @@ Left: the quadratic bowl; right: concentric contours centered at the origin. On 
 ---
 
 <p align="center">
-  <img src="docs/Captura%20de%20pantalla%202025-11-07%20131716.png" alt="PSO traversing a multimodal surface with several peaks/valleys; red points track the current best-so-far" width="960">
+  <img src="docs/pso_nonconvex.gif" alt="PSO traversing a multimodal surface with several peaks/valleys; red points track the current best-so-far" width="960">
 </p>
 
 **Figure 3 — Crossing basins on a multimodal surface.**  
