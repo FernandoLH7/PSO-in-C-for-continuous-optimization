@@ -3,8 +3,8 @@
 This note explains the **Sphere** objective used in the repository example and provides quick,
 practical guidance (bounds and parameters), plus visuals you can include in the README or docs.
 
-> **Tip:** On GitHub, math is rendered using `$...$` for inline and `$$...$$` for display.
-> Ensure this file is **not** inside a code block (no triple backticks around the whole section).
+> **GitHub math tip:** use `$...$` for inline math and `$$...$$` for display equations.
+> Make sure this file is **not** inside a code block (no triple backticks around the whole text).
 
 ## What is the Sphere function?
 The Sphere function in $\mathbb{R}^d$ is defined as:
@@ -30,8 +30,8 @@ landscape, it is commonly used to **sanity-check** the behavior of optimizers su
 
 > For higher dimensions (e.g., $d=10$), increase `P` and `max_iter` to maintain reliable convergence.
 
-## Visuals (add to your repo)
-Place the images below under `docs/` and reference them like this:
+## Visuals
+Add these to your README or keep them here for reference.
 
 - 3D surface (2D slice of Sphere):  
   ![Sphere surface](../docs/sphere_surface.png)
@@ -39,22 +39,24 @@ Place the images below under `docs/` and reference them like this:
 - 2D contour view:  
   ![Sphere contours](../docs/sphere_contours.png)
 
-> If you use a different folder, update the relative paths accordingly.
+## Results (run interpretation)
 
-## How PSO converges on Sphere (interpretation guide)
-Each particle updates its velocity with **inertia**, **cognitive** (toward personal best $p_i$), and **social** (toward global best $g$) components. Positions then move by adding the new velocity.
-You should see **best fitness** decrease rapidly at first as the swarm reaches the basin around the origin, then more slowly as it fine‑tunes.
+Below is an example run you shared (see image). The swarm converges from an initial best fitness of
+~**9.8740** at iteration 0 toward a final best fitness of ~**0.0001** by iteration 99, with the best
+position approaching the origin (e.g., $[0.0033,\ 0.0078,\ 0.0007]$). This is the expected behavior
+on Sphere: the global best quickly finds the basin around $\mathbf{0}$ and subsequent updates
+produce small, steady improvements.
 
-**What to look for in your run output**
-- A monotonic (or near‑monotonic) decline in the reported **best fitness**.
-- Final **best position** close to the zero vector.
-- Stable behavior (no explosions): if values saturate at bounds frequently, tweak bounds or inertia.
+- **Early iterations (0–20):** the global best changes rapidly as particles sample the space.
+- **Middle (20–70):** the global best stabilizes near the basin; best fitness drops by orders of magnitude.
+- **Late (70–99):** particles exhibit small oscillations around the nearly optimal region; improvements become marginal.
 
-## Add your run results here
-Paste key excerpts of your log (iterations and best fitness/position). Then summarize, for example:
-> Early iterations: the swarm explores the search space within the bounds; $g$ changes frequently.  
-> Mid iterations: $g$ stabilizes; most particles move into a tighter region.  
-> Late iterations: small oscillations around the origin; best fitness $\approx 0$; best position near $\mathbf{0}$.
+**Your run screenshot:**  
+![Run results](../docs/results.png)
 
-### Optional: convergence plot
-If you export a per‑iteration `best_fitness` CSV, you can plot it with `scripts/plot_convergence.py`. A typical curve on Sphere is a smooth descending line that flattens near zero.
+### What to look for in future runs
+- A monotonic (or near-monotonic) decline in **best fitness**.
+- **Best position** close to the zero vector.
+- Stable behavior (no exploding velocities); otherwise adjust bounds or the inertia schedule.
+
+_Last updated: 2025-11-07_
