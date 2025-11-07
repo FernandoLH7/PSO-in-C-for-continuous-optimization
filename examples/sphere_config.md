@@ -31,10 +31,10 @@ landscape, it is commonly used to **sanity-check** the behavior of optimizers su
 Place the images below in your repository (for example under `docs/`) and reference them in the README or here.
 
 - 3D surface (2D slice of Sphere):  
-  ![Sphere surface](docs/sphere_surface.png)
+  ![Sphere surface](PSO-in-C-for-continuous-optimization/docs/sphere_surface.png)
 
 - 2D contour view:  
-  ![Sphere contours](docs/sphere_contours.png)
+  ![Sphere contours](PSO-in-C-for-continuous-optimization/docs/sphere_contours.png)
 
 > If you use a different folder, update the relative paths accordingly.
 
