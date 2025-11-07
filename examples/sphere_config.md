@@ -52,7 +52,7 @@ produce small, steady improvements.
 - **Late (70–99):** particles exhibit small oscillations around the nearly optimal region; improvements become marginal.
 
 **Your run screenshot:**  
-![Run results](../docs/results.png)
+![Run results](../docs/resultados.png)
 
 ### What to look for in future runs
 - A monotonic (or near-monotonic) decline in **best fitness**.
