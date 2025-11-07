@@ -3,14 +3,11 @@
 This note explains the **Sphere** objective used in the repository example and provides quick,
 practical guidance (bounds and parameters), plus visuals.
 
-> **GitHub math tip:** use `$...$` for inline math and `$$...$$` for display equations.
-> Make sure this file is **not** inside a code block (no triple backticks around the whole text).
-
 ## What is the Sphere function?
 The Sphere function in $\mathbb{R}^d$ is defined as:
-$$
+$
 \operatorname{Sphere}(\mathbf{x}) = \sum_{i=1}^{d} x_i^2
-$$
+$
 It is **convex**, **separable**, and **strictly unimodal** with a unique global minimum at
 $\mathbf{x}^* = \mathbf{0}$ where $f(\mathbf{x}^*) = 0$. Because of its smooth, bowl-shaped
 landscape, it is commonly used to **sanity-check** the behavior of optimizers such as PSO.
