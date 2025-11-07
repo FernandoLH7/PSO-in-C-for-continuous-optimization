@@ -1,5 +1,3 @@
----
-
 ## Visual intuition
 
 <p align="center">
@@ -8,8 +6,6 @@
 
 **Figure 1 — PSO on a periodic, multimodal surface.**  
 The wavy contour lines indicate many local minima. The orange “x” markers show successive particle locations. The swarm samples multiple basins early, then information sharing (global best) pulls it toward a deeper valley.
-
----
 
 <p align="center">
   <img src="docs/Captura%20de%20pantalla%202025-11-07%20131704.png" alt="Sphere function: 3D quadratic bowl and 2D contour map with the global minimum at the origin" width="960">
