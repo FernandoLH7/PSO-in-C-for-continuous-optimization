@@ -1,7 +1,7 @@
 ## Visual intuition
 
 <p align="center">
-  <img src="docs/Captura%20de%20pantalla%202025-11-07%20131650.png" alt="PSO on a rippled, periodic landscape: particles exploring and drifting toward a deeper basin" width="640">
+  <img src="ParticleSwarmArrowsAnimation.gif" alt="PSO on a rippled, periodic landscape: particles exploring and drifting toward a deeper basin" width="640">
 </p>
 
 **Figure 1 — PSO on a periodic, multimodal surface.**  
