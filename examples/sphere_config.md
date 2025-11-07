@@ -51,7 +51,7 @@ produce small, steady improvements.
 - **Middle (20–70):** the global best stabilizes near the basin; best fitness drops by orders of magnitude.
 - **Late (70–99):** particles exhibit small oscillations around the nearly optimal region; improvements become marginal.
 
-**Your run screenshot:**  
+**The result obtained is shown below:**  
 ![Run results](../docs/resultados.png)
 
 ### What to look for in future runs
